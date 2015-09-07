@@ -1,0 +1,32 @@
+/**
+ * Adds eclipse project filter. Allow to hide subprojects.
+ *
+ * Example:
+ * def getEclipseFilter() {
+ *   return '1.0-projectRelativePath-matches-true-true-(subproject-.*|test|build)'
+ * }
+ *
+ */
+
+apply plugin: 'eclipse'
+
+eclipse { 
+    project {
+		// project must supply filter
+		def eclipseFilter = getEclipseFilter();
+		
+        // add subproject filter
+        file {
+            withXml { xmlProvider ->
+                Node project = xmlProvider.asNode()
+                Node filter = project.appendNode('filteredResources').appendNode('filter')
+                filter.appendNode('id', System.currentTimeMillis() )
+                filter.appendNode('name', '')
+                filter.appendNode('type', 10)
+                Node matcher = filter.appendNode('matcher')
+                matcher.appendNode('id', 'org.eclipse.ui.ide.multiFilter')
+                matcher.appendNode('arguments', eclipseFilter)
+            }
+        }
+    }
+}
