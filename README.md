@@ -5,36 +5,36 @@ Some scripts for Gradle.
 
 Adds eclipse project filter. Allows to hide gradle subprojects or build directory.
 
-Example:
+Example, usage:
 
 	def getEclipseFilter() {
 		return '1.0-projectRelativePath-matches-true-true-(subproject-.*|test|build)'
 	}
 	
-	apply from: "eclipse-project-filter.gradle"
+	apply from: "https://raw.githubusercontent.com/Schnitker/gradle-scripts/master/eclipse-project-filter.gradle"
 	
 
 ## eclipse-project-libsort.gradle
 
 Sorts the eclipse classpath (libraries). The result is a sorted Eclipse project/package explorer view.
 
-Example:
+Usage:
 
-	apply from: "eclipse-project-libsort.gradle"
+	apply from: "https://raw.githubusercontent.com/Schnitker/gradle-scripts/master/eclipse-project-libsort.gradle"
 
 ## eclipse-project-utf8.gradle
 
 Adds default utf-8 encoding for eclipse project.
 
-Example:
+Usage:
 
-	apply from: "eclipse-project-utf8.gradle"
+	apply from: "https://raw.githubusercontent.com/Schnitker/gradle-scripts/master/eclipse-project-utf8.gradle"
 
 ## eclipse-project-nature.gradle
 
 Adds gradle nature to eclipse project. The eclipse plugin "buildship 1.0.2" is required.
 Allows to use standard 'gradlew cleanEclipse eclipse' command, without destroying gradle project nature.
 
-Example:
+Usage:
 
-	apply from: "eclipse-project-nature.gradle"
+	apply from: "https://raw.githubusercontent.com/Schnitker/gradle-scripts/master/eclipse-project-nature.gradle"
