@@ -22,19 +22,19 @@ Example:
 
 	apply from: "eclipse-project-libsort.gradle"
 
-## eclipse-project-nature.gradle
+## eclipse-project-utf8.gradle
 
 Adds default utf-8 encoding for eclipse project.
 
 Example:
 
-	apply from: "eclipse-project-nature.gradle"
+	apply from: "eclipse-project-utf8.gradle"
 
-## eclipse-project-utf8.gradle
+## eclipse-project-nature.gradle
 
 Adds gradle nature to eclipse project. The eclipse plugin "buildship 1.0.2" is required.
 Allows to use standard 'gradlew cleanEclipse eclipse' command, without destroying gradle project nature.
 
 Example:
 
-	apply from: "eclipse-project-utf8.gradle"
+	apply from: "eclipse-project-nature.gradle"
