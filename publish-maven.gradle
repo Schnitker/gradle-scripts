@@ -51,8 +51,8 @@ def customizePom(pom, projectName, projectDescription) {
 			name = projectName
 			description = projectDescription
 			organization {
-				name = "Ceyoniq"
-				url = "http://www.ceyoniq.com"
+				name = "Sample"
+				url = "http://www.sample.com"
 			}
 			developers {
 				developer {
