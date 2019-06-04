@@ -30,3 +30,6 @@ Usage:
 
 	apply from: "https://raw.githubusercontent.com/Schnitker/gradle-scripts/master/eclipse-project-utf8.gradle"
 
+
+Build new JAR
+mvn install:install-file -DgroupId=com.github.schnitker -DartifactId=gradle-scripts -Dversion=1.0.1 -Dfile=gradle-scripts-1.0.1.zip -Dpackaging=jar -DgeneratePom=true -DlocalRepositoryPath=.  -DcreateChecksum=true
