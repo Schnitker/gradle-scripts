@@ -6,15 +6,18 @@ apply plugin: 'eclipse'
 
 eclipse {
     project {
-        eclipseProject << {
-            file('.settings').mkdir()
-            File f = file('.settings/org.eclipse.core.resources.prefs')
-            f.write('eclipse.preferences.version=1\n')
-            f.append('encoding/<project>=utf-8')
+        eclipseProject {
+            doLast {
+                file('.settings').mkdir()
+                File f = file('.settings/org.eclipse.core.resources.prefs')
+                f.write('eclipse.preferences.version=1\n')
+                f.append('encoding/<project>=utf-8')
+            }
         }
-        cleanEclipseProject << {
-            File f = file(".settings/org.eclipse.core.resources.prefs")
-            if ( f.exists() ) f.delete()
+        cleanEclipseProject {
+            doLast {
+                delete ".settings/org.eclipse.core.resources.prefs"
+            }
         }
     }
 }

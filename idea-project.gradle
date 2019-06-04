@@ -1,0 +1,9 @@
+apply plugin: 'idea'
+
+idea{
+    module{
+        inheritOutputDirs = false
+        outputDir = file('bin/main')
+        testOutputDir = file('bin/test')
+    }
+}
